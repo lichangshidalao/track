@@ -12,7 +12,7 @@ class CesiumMap extends Component {
         Camera.DEFAULT_VIEW_FACTOR = 0;
         Camera.DEFAULT_VIEW_RECTANGLE = boundingRectangle;
 
-        Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyYjRjMWZhZi1iYWRhLTQ2ZGEtOWU5Ny0xZGFmMjhiY2RlOTEiLCJpZCI6MjU1MzMsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1ODYxNTQ5MDF9.LYpPxRfUNl2KMIqDy5jmweyYH5KVrnb7O-hNbee4lDQ";
+        Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYWE1OWUxNy1mMWZiLTQzYjYtYTQ0OS1kMWFjYmFkNjc5YzciLCJpZCI6NTc3MzMsImlhdCI6MTYyNzg0NTE4Mn0.XcKpgANiY19MC4bdFUXMVEBToBmqS8kuYpUlxJHYZxk";
         var viewer = new Viewer(this.cesiumContainer, {
             imageryProvider: new MapboxStyleImageryProvider({
                 styleId: 'streets-v11',
