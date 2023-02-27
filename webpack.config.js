@@ -12,19 +12,30 @@ module.exports = {
         app: './src/index.js'
     },
     output: {
-        filename: 'app.js',
+        filename: 'index_bundle.js',
         path: path.resolve(__dirname, 'dist'),
+    },
+    target: 'web',
+    devServer: {
+	port: '5000',
+	static: {
+	  directory: path.join(__dirname, 'public')
+    	},
+    	open: true,
+    	hot: true,
+    	liveReload: true
     },
     amd: {
         // Enable webpack-friendly use of require in Cesium
         toUrlUndefined: true
     },
     resolve: {
+	extensions: ['.js', '.jsx', '.json'],
 	fallback: {
-	    "https": false,
-	    "http": false,
-	    "zlib": false,
-	    "url": false
+	    'https': false,
+	    'http': false,
+	    'zlib': false,
+	    'url': false
 	},
         alias: {
             cesium: path.resolve(__dirname, cesiumSource)
@@ -38,11 +49,16 @@ module.exports = {
         }, {
             test: /\.(png|gif|jpg|jpeg|svg|xml|json)$/,
             use: [ 'url-loader' ]
+        },
+	{
+            test: /\.(js|jsx)$/, 
+            exclude: /node_modules/, 
+            use: 'babel-loader', 
         }]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            template: path.join(__dirname, 'public', 'index.html')
         }),
         // Copy Cesium Assets, Widgets, and Workers to a static directory
         new CopyWebpackPlugin({ 
