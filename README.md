@@ -1,5 +1,5 @@
 # Description
-This boilerplate contains the minimum codebase to start a development for React/Cesium web application using Material UI
+This boilerplate contains the minimum codebase to start a development for React/Cesium web application with Material UI as the component library
 
 # How to run
 1. `npm install`
