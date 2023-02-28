@@ -30,17 +30,16 @@ module.exports = {
         toUrlUndefined: true
     },
     resolve: {
-	extensions: ['.js', '.jsx', '.json'],
-	fallback: {
-	    'https': false,
-	    'http': false,
-	    'zlib': false,
-	    'url': false
-	},
+	    extensions: ['.js', '.jsx', '.json'],
+        fallback: {
+            'https': false,
+            'http': false,
+            'zlib': false,
+            'url': false
+        },
         alias: {
             cesium: path.resolve(__dirname, cesiumSource)
-        },
-        mainFiles: ['module', 'main', 'Cesium']
+        }
     },
     module: {
         rules: [{
@@ -50,7 +49,7 @@ module.exports = {
             test: /\.(png|gif|jpg|jpeg|svg|xml|json)$/,
             use: [ 'url-loader' ]
         },
-	{
+	    {
             test: /\.(js|jsx)$/, 
             exclude: /node_modules/, 
             use: 'babel-loader', 
