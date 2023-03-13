@@ -46,7 +46,19 @@ function CesiumMap() {
         url: buildModuleUrl("Assets/Textures/NaturalEarthII"),
       }),
     });
-    new CesiumNavigation(viewer)
+    // 指南针
+    new CesiumNavigation(viewer.viewer, {
+      defaultResetLocaltion: [
+        108.845808, 34.214282, 17000000, 0, -1.5707963267948966, 0.0,
+      ], // 重置视点配置
+      enableCompass: true, // 罗盘
+      enableZoomControls: true, // 缩放控件
+      enableDistanceLegend: true, // 距离图例
+      enableCompassOuterRing: true, // 指南针外环
+      resetTooltip: "重置视图", // 重置视图的tooltip
+      zoomInTooltip: "放大", // 放大按钮的tooltip
+      zoomOutTooltip: "缩小", // 缩小按钮的tooltip
+    });
     viewer.cesiumWidget.creditContainer.style.display = "none";
     viewer.camera.setView({
       destination: Cartesian3.fromDegrees(108.845808, 34.214282, 17000000),
